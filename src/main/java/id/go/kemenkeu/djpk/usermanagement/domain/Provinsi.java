@@ -1,33 +1,44 @@
 package id.go.kemenkeu.djpk.usermanagement.domain;
 
-public class Provinsi {
-	private Integer idtprov;//`idtprov` int(11) NOT NULL AUTO_INCREMENT,
-	private String kdprov;//`kdprov` char(2) DEFAULT NULL,
-	private String urprov;//`urprov` varchar(200) DEFAULT NULL,
-	private String urprovsingkat;//`urprovsingkat` varchar(50) DEFAULT NULL,
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	public Integer getIdtprov() {
-		return idtprov;
+@Entity
+@Table(name="tprov")
+public class Provinsi {
+	@Id
+	@Column(name="idtprov")
+	private Integer id;//`idtprov` int(11) NOT NULL AUTO_INCREMENT,
+	@Column(name="kdprov")
+	private String kodeProvinsi;//`kdprov` char(2) DEFAULT NULL,
+	@Column(name="urprov")
+	private String uraianProvinsi;//`urprov` varchar(200) DEFAULT NULL,
+	@Column(name="urprovsingkat")
+	private String uraianProvinsiSingkat;//`urprovsingkat` varchar(50) DEFAULT NULL,
+	public Integer getId() {
+		return id;
 	}
-	public void setIdtprov(Integer idtprov) {
-		this.idtprov = idtprov;
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getKdprov() {
-		return kdprov;
+	public String getKodeProvinsi() {
+		return kodeProvinsi;
 	}
-	public void setKdprov(String kdprov) {
-		this.kdprov = kdprov;
+	public void setKodeProvinsi(String kodeProvinsi) {
+		this.kodeProvinsi = kodeProvinsi;
 	}
-	public String getUrprov() {
-		return urprov;
+	public String getUraianProvinsi() {
+		return uraianProvinsi;
 	}
-	public void setUrprov(String urprov) {
-		this.urprov = urprov;
+	public void setUraianProvinsi(String uraianProvinsi) {
+		this.uraianProvinsi = uraianProvinsi;
 	}
-	public String getUrprovsingkat() {
-		return urprovsingkat;
+	public String getUraianProvinsiSingkat() {
+		return uraianProvinsiSingkat;
 	}
-	public void setUrprovsingkat(String urprovsingkat) {
-		this.urprovsingkat = urprovsingkat;
+	public void setUraianProvinsiSingkat(String uraianProvinsiSingkat) {
+		this.uraianProvinsiSingkat = uraianProvinsiSingkat;
 	}
 }
