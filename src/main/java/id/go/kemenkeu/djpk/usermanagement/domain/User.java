@@ -18,16 +18,19 @@ public class User {
 	@Column(name="userid")
 	private String name;
 	private String pwd;
+	@Column(name="id_grup")
 	private Integer idGrup;
-	@Column(name="tanggalDibuat")
+	@Column(name="tanggal_dibuat")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tanggalDibuat;
-	@Column(name="tanggalDiubah")
+	@Column(name="tanggal_diubah")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tanggalDiubah;
+	@Column(name="dibuat_oleh")
 	private Integer dibuatOleh;
+	@Column(name="diubah_oleh")
 	private Integer diubahOleh;
-
+	@Column(name="isaktif")
 	private boolean isAktif;
 	
 	public String getPwd() {
