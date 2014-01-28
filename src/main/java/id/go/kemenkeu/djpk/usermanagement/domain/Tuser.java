@@ -2,7 +2,7 @@ package id.go.kemenkeu.djpk.usermanagement.domain;
 
 import java.sql.Date;
 
-public class User {
+public class Tuser {
 	 private Integer idUser; 
 	 private String userId;
 	 private String pwd;
