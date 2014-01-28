@@ -1,7 +1,11 @@
 package id.go.kemenkeu.djpk.usermanagement.domain;
 
+@Entity
+@Table(name = "tpemda")
 public class Pemda {
-	private Integer idtpemda;		//`idtpemda` int(11) NOT NULL AUTO_INCREMENT,
+	@Id	//Pada hibernate setiap tabel harus ada Primary Key
+	private Integer id;		//`idtpemda` int(11) NOT NULL AUTO_INCREMENT,
+	@Column(name = "kdsatker", unique = true, nullable =true)
 	private Integer idtprov;		//`idtprov` int(11) DEFAULT NULL,
 	private String kdprov;			//`kdprov` char(2) DEFAULT NULL,
 	private String kdsatker;		//`kdsatker` char(6) DEFAULT NULL,
