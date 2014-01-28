@@ -100,5 +100,4 @@ public class Menu {
 	public void setParam(String param) {
 		this.param = param;
 	}
-
 }
