@@ -1,58 +1,64 @@
 package id.go.kemenkeu.djpk.usermanagement.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Entity
 @Table(name = "tpemda")
 public class Pemda {
-	@Id	//Pada hibernate setiap tabel harus ada Primary Key
+        @Id
 	private Integer id;		//`idtpemda` int(11) NOT NULL AUTO_INCREMENT,
-	@Column(name = "kdsatker", unique = true, nullable =true)
-	private Integer idtprov;		//`idtprov` int(11) DEFAULT NULL,
-	private String kdprov;			//`kdprov` char(2) DEFAULT NULL,
-	private String kdsatker;		//`kdsatker` char(6) DEFAULT NULL,
-	private String kdpemda;			//`kdpemda` char(2) DEFAULT NULL,
-	private String urpemda;			//`urpemda` varchar(200) DEFAULT NULL,
-	private String urpemdasingkat;	//`urpemdasingkat` varchar(50) DEFAULT NULL,
+        
+        @Column(name = "kdsatker", unique = true, nullable = true)
+	private String kodeSatuanKerja;		//`kdsatker` char(6) DEFAULT NULL,
+        @Column(name = "kdpemda")
+	private String kode;			//`kdpemda` char(2) DEFAULT NULL,
+        @Column(name = "urpemda")
+	private String uraian;			//`urpemda` varchar(200) DEFAULT NULL,
+        @Column(name = "urpemdasingkat")
+	private String uraianSingkat;	//`urpemdasingkat` varchar(50) DEFAULT NULL,
 
-	public Integer getIdtpemda() {
-		return idtpemda;
-	}
-	public void setIdtpemda(Integer idtpemda) {
-		this.idtpemda = idtpemda;
-	}
-	public Integer getIdtprov() {
-		return idtprov;
-	}
-	public void setIdtprov(Integer idtprov) {
-		this.idtprov = idtprov;
-	}
-	public String getKdprov() {
-		return kdprov;
-	}
-	public void setKdprov(String kdprov) {
-		this.kdprov = kdprov;
-	}
-	public String getKdsatker() {
-		return kdsatker;
-	}
-	public void setKdsatker(String kdsatker) {
-		this.kdsatker = kdsatker;
-	}
-	public String getKdpemda() {
-		return kdpemda;
-	}
-	public void setKdpemda(String kdpemda) {
-		this.kdpemda = kdpemda;
-	}
-	public String getUrpemda() {
-		return urpemda;
-	}
-	public void setUrpemda(String urpemda) {
-		this.urpemda = urpemda;
-	}
-	public String getUrpemdasingkat() {
-		return urpemdasingkat;
-	}
-	public void setUrpemdasingkat(String urpemdasingkat) {
-		this.urpemdasingkat = urpemdasingkat;
-	}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getKodeSatuanKerja() {
+        return kodeSatuanKerja;
+    }
+
+    public void setKodeSatuanKerja(String kodeSatuanKerja) {
+        this.kodeSatuanKerja = kodeSatuanKerja;
+    }
+
+    public String getKode() {
+        return kode;
+    }
+
+    public void setKode(String kode) {
+        this.kode = kode;
+    }
+
+    public String getUraian() {
+        return uraian;
+    }
+
+    public void setUraian(String uraian) {
+        this.uraian = uraian;
+    }
+
+    public String getUraianSingkat() {
+        return uraianSingkat;
+    }
+
+    public void setUraianSingkat(String uraianSingkat) {
+        this.uraianSingkat = uraianSingkat;
+    }
+
+	
 }
