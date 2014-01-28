@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tprov")
-public class Provinsi {
+public class Tprov {
 	@Id
 	@Column(name="idtprov")
 	private Integer id;//`idtprov` int(11) NOT NULL AUTO_INCREMENT,
