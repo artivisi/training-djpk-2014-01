@@ -2,7 +2,6 @@ package id.go.kemenkeu.djpk.usermanagement.domain;
 
 import java.sql.Date;
 
-
 public class User {
 	private Integer idUser;
 	private String userId;
@@ -16,7 +15,8 @@ public class User {
 	private Integer idTwilkerja;
 	private boolean isAktif;
 	
-	public Integer getIdUser() {
+	 
+	 public Integer getIdUser() {
 		return idUser;
 	}
 
