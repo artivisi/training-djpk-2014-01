@@ -1,10 +1,27 @@
 package id.go.kemenkeu.djpk.usermanagement.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tprofil")
 public class Tprofil {
+	@Id
+	@Column(name="id_tprofil")
 	private Integer idTprofil; // `id_tprofil` int(11) NOT NULL AUTO_INCREMENT,
+	
+	@Column(name="induk_tprofil")
 	private Integer indukTprofil;
+	
+	@Column(name="kd_profil") 
 	private String kdProfil;
+	
+	@Column(name="nm_profil")
 	private String nmProfil;
+	
+	@Column(name="level")
 	private Integer level;
 
 	public Integer getIdTprofil() {
