@@ -1,13 +1,13 @@
 package id.go.kemenkeu.djpk.usermanagement.domain;
 
 public class Tpemda {
-	private Integer idtpemda; //	  `idtpemda` int(11) NOT NULL AUTO_INCREMENT,
-	private Integer idtprov;//	  `idtprov` int(11) DEFAULT NULL,
-	private String kdprov;//	  `kdprov` char(2) DEFAULT NULL,
-	private String kdsatker;//	  `kdsatker` char(6) DEFAULT NULL,
-	private String kdpemda;//	  `kdpemda` char(2) DEFAULT NULL,
-	private String urpemda;//	  `urpemda` varchar(200) DEFAULT NULL,
-	private String urpemdasingkat;//	  `urpemdasingkat` varchar(50) DEFAULT NULL,
+	private Integer idtpemda;		//`idtpemda` int(11) NOT NULL AUTO_INCREMENT,
+	private Integer idtprov;		//`idtprov` int(11) DEFAULT NULL,
+	private String kdprov;			//`kdprov` char(2) DEFAULT NULL,
+	private String kdsatker;		//`kdsatker` char(6) DEFAULT NULL,
+	private String kdpemda;			//`kdpemda` char(2) DEFAULT NULL,
+	private String urpemda;			//`urpemda` varchar(200) DEFAULT NULL,
+	private String urpemdasingkat;	//`urpemdasingkat` varchar(50) DEFAULT NULL,
 
 	public Integer getIdtpemda() {
 		return idtpemda;
