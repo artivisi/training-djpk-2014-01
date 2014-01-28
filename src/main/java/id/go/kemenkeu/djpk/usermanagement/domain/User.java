@@ -2,36 +2,37 @@ package id.go.kemenkeu.djpk.usermanagement.domain;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tuser")
 public class User {
-	private Integer idUser;
-	private String userId;
+	@Id
+	@Column(name="id_user")
+	private Integer id;
+	@Column(name="userid")
+	private String name;
 	private String pwd;
+	@Column(name="id_grup")
 	private Integer idGrup;
+	@Column(name="tanggal_dibuat")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date tanggalDibuat;
+	@Column(name="tanggal_diubah")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date tanggalDiubah;
+	@Column(name="dibuat_oleh")
 	private Integer dibuatOleh;
+	@Column(name="diubah_oleh")
 	private Integer diubahOleh;
-	private Integer idTprofil;
-	private Integer idTwilkerja;
+	@Column(name="isaktif")
 	private boolean isAktif;
 	
-	 
-	 public Integer getIdUser() {
-		return idUser;
-	}
-
-	public void setIdUser(Integer idUser) {
-		this.idUser = idUser;
-	}
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
 	public String getPwd() {
 		return pwd;
 	}
@@ -78,22 +79,6 @@ public class User {
 
 	public void setDiubahOleh(Integer diubahOleh) {
 		this.diubahOleh = diubahOleh;
-	}
-
-	public Integer getIdTprofil() {
-		return idTprofil;
-	}
-
-	public void setIdTprofil(Integer idTprofil) {
-		this.idTprofil = idTprofil;
-	}
-
-	public Integer getIdTwilkerja() {
-		return idTwilkerja;
-	}
-
-	public void setIdTwilkerja(Integer idTwilkerja) {
-		this.idTwilkerja = idTwilkerja;
 	}
 
 	public boolean isAktif() {
