@@ -12,7 +12,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
     public static void main(String[] args) throws Exception {
-        AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:id/go/kemenkeu/djpk/**/konfigurasi-spring.xml");
+        AbstractApplicationContext ctx 
+                = new ClassPathXmlApplicationContext("classpath:id/go/kemenkeu/djpk/**/konfigurasi-spring.xml");
         ctx.registerShutdownHook();
         
         UserManagementService ums = (UserManagementService) ctx.getBean("userManagementService");

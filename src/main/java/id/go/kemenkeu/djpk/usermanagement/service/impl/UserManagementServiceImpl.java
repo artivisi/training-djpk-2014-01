@@ -26,7 +26,7 @@ public class UserManagementServiceImpl implements UserManagementService {
     
     // method untuk Pemda
     @Transactional(readOnly = false)
-    public void simpan(Pemda p) {
+    public void simpan(Object p) {
         sessionFactory.getCurrentSession().saveOrUpdate(p);
     }
 
