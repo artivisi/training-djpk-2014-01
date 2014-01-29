@@ -8,6 +8,15 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
+    <!-- kalau dilakukan di Java -->
+    <!--
+    BasicDataSource dataSource = new BasicDataSource();
+    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+    dataSource.setUrl("jdbc:mysql://localhost/dbusermanagement");
+    dataSource.setUsername"root");
+    // dan seterusnya
+    -->
+    
     <!-- koneksi database menggunakan library Commons DBCP -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <!-- database driver untuk MySQL -->
@@ -24,6 +33,12 @@
         <property name="initialSize" value="8" />
     </bean>
     
+    <!-- kalau dilakukan di Java -->
+    <!--
+    SessionFactory sessionFactory = new LocalSessionFactoryBean();
+    sessionFactory.setDataSource(dataSource);
+    // dan seterusnya
+    -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
@@ -46,6 +61,12 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <!-- supaya @Transactional diproses -->
     <tx:annotation-driven/>
 
+    <!-- deklarasi manual, nanti ini akan diganti dengan autodetect -->
+    <bean id="userManagementService"
+          class="id.go.kemenkeu.djpk.usermanagement.service.impl.UserManagementServiceImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 </beans>
