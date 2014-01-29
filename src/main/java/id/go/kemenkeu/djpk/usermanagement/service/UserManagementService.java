@@ -5,6 +5,7 @@ import java.util.List;
 
 public interface UserManagementService {
     public void simpan(Object p);
+    public void simpanBanyak(List<Object> daftarObject);
     
     // method untuk class Pemda
     public void hapus(Pemda p);

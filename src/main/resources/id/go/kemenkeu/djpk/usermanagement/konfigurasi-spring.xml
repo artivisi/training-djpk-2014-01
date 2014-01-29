@@ -61,6 +61,7 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <!-- supaya @Transactional diproses -->
     <tx:annotation-driven/>
 
     <!-- deklarasi manual, nanti ini akan diganti dengan autodetect -->
