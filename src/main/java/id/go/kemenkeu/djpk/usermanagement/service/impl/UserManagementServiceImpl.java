@@ -24,10 +24,16 @@ public class UserManagementServiceImpl implements UserManagementService {
         this.sessionFactory = sessionFactory;
     }
     
-    // method untuk Pemda
     @Transactional(readOnly = false)
     public void simpan(Object p) {
         sessionFactory.getCurrentSession().saveOrUpdate(p);
+    }
+    
+    @Transactional(readOnly = false)
+    public void simpanBanyak(List<Object> p) {
+        for (Object object : p) {
+            sessionFactory.getCurrentSession().saveOrUpdate(object);
+        }
     }
 
     @Transactional(readOnly = false)
