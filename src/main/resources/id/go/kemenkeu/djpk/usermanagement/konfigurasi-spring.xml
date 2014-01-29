@@ -17,7 +17,7 @@
     // dan seterusnya
     -->
     
-    <!-- koneksi database menggunakan library Commons DBCP -->
+    <!-- koneksi database menggunakan library Commons DBCP (database connection pooling) -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <!-- database driver untuk MySQL -->
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
