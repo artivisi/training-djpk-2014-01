@@ -26,6 +26,9 @@ public class App {
         
         ums.simpan(p);
         
+        // id sudah terisi
+        System.out.println("ID baru : "+p.getId());
+        
         System.out.println("Idle 10 detik");
         Thread.sleep(10 * 1000);
     }
