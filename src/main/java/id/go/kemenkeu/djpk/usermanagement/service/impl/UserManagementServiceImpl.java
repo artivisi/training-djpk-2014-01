@@ -8,8 +8,11 @@ package id.go.kemenkeu.djpk.usermanagement.service.impl;
 
 import id.go.kemenkeu.djpk.usermanagement.domain.Pemda;
 import id.go.kemenkeu.djpk.usermanagement.domain.User;
+import id.go.kemenkeu.djpk.usermanagement.service.DaoTes1;
 import id.go.kemenkeu.djpk.usermanagement.service.UserManagementService;
+
 import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -75,4 +78,10 @@ public class UserManagementServiceImpl implements UserManagementService {
     
     // method untuk class Provinsi
     
+    
+    
+    public DaoTes1 getDaoTes1() {
+		
+		return new DaoTes1();
+	}
 }

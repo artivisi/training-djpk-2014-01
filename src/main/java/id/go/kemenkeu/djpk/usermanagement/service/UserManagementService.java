@@ -23,4 +23,8 @@ public interface UserManagementService {
     // method untuk class Tahun
     
     // method untuk class Provinsi
+    
+    // Testing
+    public DaoTes1 getDaoTes1();
+   
 }
