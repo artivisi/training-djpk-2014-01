@@ -73,5 +73,6 @@
     -->
     
     <!-- autodetect @Service, @Controller, @Repository, @Component -->
-    <context:component-scan base-package="id.go.kemenkeu.djpk.usermanagement.service.impl"/>
+    <context:component-scan 
+        base-package="id.go.kemenkeu.djpk.usermanagement.service.impl, id.go.kemenkeu.djpk.usermanagement.dao"/>
 </beans>

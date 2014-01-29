@@ -1,6 +1,7 @@
 package id.go.kemenkeu.djpk.usermanagement.service;
 
 
+import id.go.kemenkeu.djpk.usermanagement.dao.DaoTes1;
 import id.go.kemenkeu.djpk.usermanagement.domain.Pemda;
 import id.go.kemenkeu.djpk.usermanagement.domain.User;
 
@@ -25,6 +26,5 @@ public interface UserManagementService {
     // method untuk class Provinsi
     
     // Testing
-    public DaoTes1 getDaoTes1();
-   
+    public List getPemdaPakeSpring();
 }

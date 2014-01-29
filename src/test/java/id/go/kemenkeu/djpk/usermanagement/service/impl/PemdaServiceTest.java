@@ -135,4 +135,10 @@ public class PemdaServiceTest {
         rs.close();
         conn.close();
     }
+    
+    @Test
+    public void testCariPemdaPakaiSpring(){
+        List hasil = ums.getPemdaPakeSpring();
+        Assert.assertTrue(hasil.size() == 1);
+    }
 }

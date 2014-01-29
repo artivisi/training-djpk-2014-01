@@ -8,7 +8,7 @@ package id.go.kemenkeu.djpk.usermanagement.service.impl;
 
 import id.go.kemenkeu.djpk.usermanagement.domain.Pemda;
 import id.go.kemenkeu.djpk.usermanagement.domain.User;
-import id.go.kemenkeu.djpk.usermanagement.service.DaoTes1;
+import id.go.kemenkeu.djpk.usermanagement.dao.DaoTes1;
 import id.go.kemenkeu.djpk.usermanagement.service.UserManagementService;
 
 import java.util.List;
@@ -27,6 +27,9 @@ public class UserManagementServiceImpl implements UserManagementService {
 
     @Autowired
     private SessionFactory sessionFactory;
+    
+    @Autowired
+    private DaoTes1 daoTes1;
 
     /* tidak perlu lagi setter karena sudah diisi pakai @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
@@ -78,9 +81,8 @@ public class UserManagementServiceImpl implements UserManagementService {
     
     // method untuk class Provinsi
     
-    
     @Transactional(readOnly = true)
-    public DaoTes1 getDaoTes1() {
-		return new DaoTes1();
-	}
+    public List getPemdaPakeSpring(){
+        return daoTes1.getPakeSpring();
+    }
 }
