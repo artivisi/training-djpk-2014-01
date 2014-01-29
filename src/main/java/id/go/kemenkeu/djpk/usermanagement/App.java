@@ -37,7 +37,7 @@ public class App {
         
         Pemda p2 = new Pemda();
         p2.setKode("P-003");
-        p2.setKodeSatuanKerja("ABC");
+        p2.setKodeSatuanKerja("ABC2");
         p2.setUraian("Pemda Tester");
         p2.setUraianSingkat("Tester");
         daftarPemda.add(p2);

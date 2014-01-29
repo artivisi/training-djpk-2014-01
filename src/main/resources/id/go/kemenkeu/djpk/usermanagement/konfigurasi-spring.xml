@@ -65,8 +65,13 @@
     <tx:annotation-driven/>
 
     <!-- deklarasi manual, nanti ini akan diganti dengan autodetect -->
+    <!--
     <bean id="userManagementService"
           class="id.go.kemenkeu.djpk.usermanagement.service.impl.UserManagementServiceImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    -->
+    
+    <!-- autodetect @Service, @Controller, @Repository, @Component -->
+    <context:component-scan base-package="id.go.kemenkeu.djpk.usermanagement.service.impl"/>
 </beans>
