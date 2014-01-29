@@ -20,8 +20,17 @@ public class App {
         
         UserManagementService ums = (UserManagementService) ctx.getBean("userManagementService");
         
-        List<Object> daftarPemda = new ArrayList<Object>();
+        //Simpan biasa
         Pemda p = new Pemda();
+        
+        p.setKode("P-000");
+        p.setKodeSatuanKerja("ABC");
+        p.setUraian("Pemda Tester");
+        p.setUraianSingkat("Tester");
+        ums.simpan(p);
+        
+        //Simpan banyak
+        List<Object> daftarPemda = new ArrayList<Object>();
         p.setKode("P-001");
         p.setKodeSatuanKerja("ABC");
         p.setUraian("Pemda Tester");

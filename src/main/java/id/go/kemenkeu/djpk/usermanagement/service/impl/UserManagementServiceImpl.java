@@ -7,6 +7,7 @@
 package id.go.kemenkeu.djpk.usermanagement.service.impl;
 
 import id.go.kemenkeu.djpk.usermanagement.domain.Pemda;
+import id.go.kemenkeu.djpk.usermanagement.domain.User;
 import id.go.kemenkeu.djpk.usermanagement.service.UserManagementService;
 import java.util.List;
 import org.hibernate.SessionFactory;
@@ -59,6 +60,12 @@ public class UserManagementServiceImpl implements UserManagementService {
                 .setMaxResults(rows)
                 .list();
     }
+
+    @Transactional(readOnly = false)
+	public void hapus(User p) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().delete(p);
+	}
     
     // method untuk class Profile
     
