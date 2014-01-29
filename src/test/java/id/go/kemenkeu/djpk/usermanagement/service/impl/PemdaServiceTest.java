@@ -8,11 +8,17 @@ package id.go.kemenkeu.djpk.usermanagement.service.impl;
 
 import id.go.kemenkeu.djpk.usermanagement.domain.Pemda;
 import id.go.kemenkeu.djpk.usermanagement.service.UserManagementService;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
+import org.dbunit.database.DatabaseConnection;
+import org.dbunit.dataset.CompositeDataSet;
+import org.dbunit.dataset.IDataSet;
+import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+import org.dbunit.operation.DatabaseOperation;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -44,10 +50,15 @@ public class PemdaServiceTest {
     
     @Before
     public void sebelumTest() throws Exception {
-        System.out.println("Kosongkan tabel pemda");
-        String sql = "delete from tpemda";
         Connection conn = dataSource.getConnection();
-        conn.createStatement().executeUpdate(sql);
+        
+        IDataSet[] daftarDataset = new IDataSet[]{
+                new FlatXmlDataSetBuilder().build(new File("src/test/resources/sample-pemda.xml"))
+        };
+        
+        DatabaseOperation.CLEAN_INSERT
+                .execute(new DatabaseConnection(conn), new CompositeDataSet(daftarDataset));
+        
         conn.close();
     }
     
@@ -59,6 +70,14 @@ public class PemdaServiceTest {
     @AfterClass
     public static void bersihBersih(){
         System.out.println("Menjalankan bersih-bersih");
+    }
+    
+    @Test
+    public void testCariById(){
+        Pemda p = ums.cariById(99);
+        Assert.assertNotNull(p);
+        
+        Assert.assertNull(ums.cariById(1001));
     }
     
     @Test
@@ -111,7 +130,7 @@ public class PemdaServiceTest {
         Assert.assertTrue(rs.next());
         
         Long count = rs.getLong(1);
-        Assert.assertEquals(new Long(3), count);
+        Assert.assertEquals(new Long(4), count);
         
         rs.close();
         conn.close();

@@ -16,9 +16,47 @@
         <org.hibernate.version>4.3.1.Final</org.hibernate.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <junit.version>4.11</junit.version>
+        <dbunit.version>2.4.9</dbunit.version>
+        <commons-logging.version>1.1.1</commons-logging.version>
+        <org.slf4j.version>1.7.5</org.slf4j.version>
+        <ch.qos.logback.version>1.0.13</ch.qos.logback.version>
     </properties>
 
     <dependencies>
+        
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${org.slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>${org.slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${ch.qos.logback.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+                
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
@@ -54,6 +92,13 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>${dbunit.version}</version>
             <scope>test</scope>
         </dependency>
 
