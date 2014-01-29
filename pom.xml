@@ -15,6 +15,7 @@
         <org.springframework.version>4.0.0.RELEASE</org.springframework.version>
         <org.hibernate.version>4.3.1.Final</org.hibernate.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
+        <junit.version>4.11</junit.version>
     </properties>
 
     <dependencies>
@@ -42,11 +43,17 @@
             <version>${org.springframework.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 

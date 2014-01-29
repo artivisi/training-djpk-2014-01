@@ -32,7 +32,7 @@ public class App {
         //Simpan banyak
         List<Object> daftarPemda = new ArrayList<Object>();
         p.setKode("P-001");
-        p.setKodeSatuanKerja("ABC");
+        p.setKodeSatuanKerja("ABC0");
         p.setUraian("Pemda Tester");
         p.setUraianSingkat("Tester");
         daftarPemda.add(p);
