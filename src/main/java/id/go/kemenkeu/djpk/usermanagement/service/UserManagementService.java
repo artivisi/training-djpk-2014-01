@@ -1,6 +1,8 @@
 package id.go.kemenkeu.djpk.usermanagement.service;
 
 import id.go.kemenkeu.djpk.usermanagement.domain.Pemda;
+import id.go.kemenkeu.djpk.usermanagement.domain.User;
+
 import java.util.List;
 
 public interface UserManagementService {
@@ -15,6 +17,7 @@ public interface UserManagementService {
     // method untuk class Profile
     
     // method untuk class User
+    public void hapus(User p);
     
     // method untuk class Tahun
     
