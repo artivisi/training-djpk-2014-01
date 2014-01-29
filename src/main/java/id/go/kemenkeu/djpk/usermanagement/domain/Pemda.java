@@ -2,13 +2,15 @@ package id.go.kemenkeu.djpk.usermanagement.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tpemda")
-public class Tpemda {
-        @Id
+public class Pemda {
+        @Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;		//`idtpemda` int(11) NOT NULL AUTO_INCREMENT,
         
         @Column(name = "kdsatker", unique = true, nullable = true)
