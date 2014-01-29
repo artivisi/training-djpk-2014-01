@@ -11,19 +11,25 @@ import id.go.kemenkeu.djpk.usermanagement.domain.User;
 import id.go.kemenkeu.djpk.usermanagement.service.UserManagementService;
 import java.util.List;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author endy
  */
+@Service("userManagementService")
 public class UserManagementServiceImpl implements UserManagementService {
 
+    @Autowired
     private SessionFactory sessionFactory;
 
+    /* tidak perlu lagi setter karena sudah diisi pakai @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+    */
     
     @Transactional(readOnly = false)
     public void simpan(Object p) {
