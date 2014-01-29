@@ -79,9 +79,8 @@ public class UserManagementServiceImpl implements UserManagementService {
     // method untuk class Provinsi
     
     
-    
+    @Transactional(readOnly = true)
     public DaoTes1 getDaoTes1() {
-		
 		return new DaoTes1();
 	}
 }
