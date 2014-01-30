@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Table(name = "tpemda")
 public class Pemda {
         @Id @GeneratedValue(strategy = GenerationType.AUTO)
+        @Column(name = "idtpemda")
 	private Integer id;		//`idtpemda` int(11) NOT NULL AUTO_INCREMENT,
         
         @Column(name = "kdsatker", unique = true, nullable = true)
