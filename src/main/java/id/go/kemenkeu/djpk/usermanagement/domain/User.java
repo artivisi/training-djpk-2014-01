@@ -40,26 +40,22 @@ public class User {
 	 */
 
     @ManyToOne
-    @JoinColumn(name = "iduser", nullable = false, foreignKey = @ForeignKey(name = "tpemda_ibfk_1"))
-    @Column(name="dibuat_oleh")
-	private Integer dibuatOleh;
+    @JoinColumn(name = "dibuat_oleh", nullable = false, foreignKey = @ForeignKey(name = "tpemda_ibfk_1"))
+	private User dibuatOleh;
     
     @ManyToOne
-    @JoinColumn(name = "iduser", nullable = false, foreignKey = @ForeignKey(name = "tpemda_ibfk_2"))
-    @Column(name="diubah_oleh")
-	private Integer diubahOleh;
+    @JoinColumn(name = "diubah_oleh", nullable = false, foreignKey = @ForeignKey(name = "tpemda_ibfk_2"))
+	private User diubahOleh;
 	
 	// relasi foreign key ke tprofil
     @ManyToOne
     @JoinColumn(name = "id_tprofil", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_3"))
-    @Column(name="idt_tprofil")
-    private Integer idProfil;
+    private Tprofil idProfil;
     
     // relasi foreign key ke twilkerja
     @ManyToOne
     @JoinColumn(name = "id_twilkerja", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_3"))
-    @Column(name="idt_twilkerja")
-    private Integer idWilayahKerja;
+    private TwilayahKerja idWilayahKerja;
     
 	public String getPwd() {
 		return pwd;
@@ -93,20 +89,52 @@ public class User {
 		this.tanggalDiubah = tanggalDiubah;
 	}
 
-	public Integer getDibuatOleh() {
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public User getDibuatOleh() {
 		return dibuatOleh;
 	}
 
-	public void setDibuatOleh(Integer dibuatOleh) {
+	public void setDibuatOleh(User dibuatOleh) {
 		this.dibuatOleh = dibuatOleh;
 	}
 
-	public Integer getDiubahOleh() {
+	public User getDiubahOleh() {
 		return diubahOleh;
 	}
 
-	public void setDiubahOleh(Integer diubahOleh) {
+	public void setDiubahOleh(User diubahOleh) {
 		this.diubahOleh = diubahOleh;
+	}
+
+	public Tprofil getIdProfil() {
+		return idProfil;
+	}
+
+	public void setIdProfil(Tprofil idProfil) {
+		this.idProfil = idProfil;
+	}
+
+	public TwilayahKerja getIdWilayahKerja() {
+		return idWilayahKerja;
+	}
+
+	public void setIdWilayahKerja(TwilayahKerja idWilayahKerja) {
+		this.idWilayahKerja = idWilayahKerja;
 	}
 
 	public boolean isAktif() {
