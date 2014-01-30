@@ -3,6 +3,7 @@ package id.go.kemenkeu.djpk.usermanagement.service;
 
 import id.go.kemenkeu.djpk.usermanagement.dao.DaoTes1;
 import id.go.kemenkeu.djpk.usermanagement.domain.Pemda;
+import id.go.kemenkeu.djpk.usermanagement.domain.Tprov;
 import id.go.kemenkeu.djpk.usermanagement.domain.User;
 
 import java.util.List;
@@ -27,4 +28,6 @@ public interface UserManagementService {
     
     // Testing
     public List getPemdaPakeSpring();
+
+    public List<Tprov> cariSemuaProvinsi();
 }

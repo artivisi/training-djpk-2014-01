@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,25 +14,31 @@
     </head>
     <body>
         <h1>Daftar Provinsi</h1>
-        
+
         <table border="1" width="80%">
             <thead>
                 <tr>
                     <th>Kode</th>
                     <th>Uraian</th>
                     <th>Uraian Singkat</th>
+                    <th>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
-                
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <c:forEach var="p" items="${daftarProvinsi}">
+                    <tr>
+                        <td>${p.kodeProvinsi}</td>
+                        <td>${p.uraianProvinsi}</td>
+                        <td>${p.uraianProvinsiSingkat}</td>
+                        <td>
+                            <a href="edit?id=${p.id}">edit</a> | 
+                            <a href="hapus?id=${p.id}">hapus</a>
+                        </td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
 
-        
+
     </body>
 </html>

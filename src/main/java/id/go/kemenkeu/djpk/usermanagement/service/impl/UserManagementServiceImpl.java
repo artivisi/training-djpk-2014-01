@@ -9,6 +9,7 @@ package id.go.kemenkeu.djpk.usermanagement.service.impl;
 import id.go.kemenkeu.djpk.usermanagement.domain.Pemda;
 import id.go.kemenkeu.djpk.usermanagement.domain.User;
 import id.go.kemenkeu.djpk.usermanagement.dao.DaoTes1;
+import id.go.kemenkeu.djpk.usermanagement.domain.Tprov;
 import id.go.kemenkeu.djpk.usermanagement.service.UserManagementService;
 
 import java.util.List;
@@ -84,5 +85,12 @@ public class UserManagementServiceImpl implements UserManagementService {
     @Transactional(readOnly = true)
     public List getPemdaPakeSpring(){
         return daoTes1.getPakeSpring();
+    }
+
+    @Transactional(readOnly = true)
+    public List<Tprov> cariSemuaProvinsi() {
+        return sessionFactory.getCurrentSession()
+                .createQuery("from Tprov order by kodeProvinsi")
+                .list();
     }
 }
