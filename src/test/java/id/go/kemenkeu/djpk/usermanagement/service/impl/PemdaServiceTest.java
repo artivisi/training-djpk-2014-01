@@ -7,6 +7,7 @@
 package id.go.kemenkeu.djpk.usermanagement.service.impl;
 
 import id.go.kemenkeu.djpk.usermanagement.domain.Pemda;
+import id.go.kemenkeu.djpk.usermanagement.domain.Tprov;
 import id.go.kemenkeu.djpk.usermanagement.service.UserManagementService;
 import java.io.File;
 import java.sql.Connection;
@@ -82,6 +83,9 @@ public class PemdaServiceTest {
     
     @Test
     public void testInsertPemda(){
+        Tprov prov = new Tprov();
+        prov.setId(99);
+        
         System.out.println("Test Insert Pemda");
         //Simpan biasa
         Pemda p = new Pemda();
@@ -90,6 +94,7 @@ public class PemdaServiceTest {
         p.setKodeSatuanKerja("ABC");
         p.setUraian("Pemda Tester");
         p.setUraianSingkat("Tester");
+        p.setProvinsi(prov);
         
         Assert.assertNull(p.getId());
         ums.simpan(p);
@@ -98,6 +103,9 @@ public class PemdaServiceTest {
     
     @Test
     public void testInsertBanyak() throws Exception {
+        Tprov prov = new Tprov();
+        prov.setId(99);
+        
         //Simpan banyak
         List<Object> daftarPemda = new ArrayList<Object>();
         Pemda p = new Pemda();
@@ -105,6 +113,7 @@ public class PemdaServiceTest {
         p.setKodeSatuanKerja("ABC0");
         p.setUraian("Pemda Tester");
         p.setUraianSingkat("Tester");
+        p.setProvinsi(prov);
         daftarPemda.add(p);
         
         Pemda p1 = new Pemda();
@@ -112,6 +121,7 @@ public class PemdaServiceTest {
         p1.setKodeSatuanKerja("ABC1");
         p1.setUraian("Pemda Tester");
         p1.setUraianSingkat("Tester");
+        p1.setProvinsi(prov);
         daftarPemda.add(p1);
         
         Pemda p2 = new Pemda();
@@ -119,6 +129,7 @@ public class PemdaServiceTest {
         p2.setKodeSatuanKerja("ABC2");
         p2.setUraian("Pemda Tester");
         p2.setUraianSingkat("Tester");
+        p2.setProvinsi(prov);
         daftarPemda.add(p2);
         
         ums.simpanBanyak(daftarPemda);
