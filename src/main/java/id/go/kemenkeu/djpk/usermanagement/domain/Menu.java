@@ -1,6 +1,15 @@
 package id.go.kemenkeu.djpk.usermanagement.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity @Table(name = "tmenu")
 public class Menu {
+    @Id
 	private Integer idMenu;
 	private Integer jenis;
 	private String nama;
@@ -12,6 +21,9 @@ public class Menu {
 	private Boolean aktif;
 	private Boolean terlihat;
 	private String param;
+        
+        @ManyToMany(mappedBy = "daftarMenu")
+        private Set<Tprofil> daftarProfil = new HashSet<Tprofil>();
 
 	public Integer getIdMenu() {
 		return idMenu;
