@@ -35,7 +35,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @author endy
  */
 @ContextConfiguration(locations = "classpath*:id/go/kemenkeu/djpk/**/konfigurasi-spring.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class) //agar contextconfig dijalankan
 public class PemdaServiceTest {
     
     @Autowired
