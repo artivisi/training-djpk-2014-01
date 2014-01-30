@@ -17,10 +17,12 @@
         </param-value>
     </context-param>
 
+<!--  Kalau ada deploy , session -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     
+<!--     Kalau ada request -->
     <servlet>
         <servlet-name>usermanagement</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
