@@ -2,9 +2,12 @@ package id.go.kemenkeu.djpk.usermanagement.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +25,11 @@ public class Pemda {
 	private String uraian;			//`urpemda` varchar(200) DEFAULT NULL,
         @Column(name = "urpemdasingkat")
 	private String uraianSingkat;	//`urpemdasingkat` varchar(50) DEFAULT NULL,
+        
+        // relasi foreign key ke Tprov
+        @ManyToOne
+        @JoinColumn(name = "idtprov", nullable = false, foreignKey = @ForeignKey(name = "tpemda_ibfk_1"))
+        private Tprov provinsi;
 
     public Integer getId() {
         return id;
@@ -61,6 +69,14 @@ public class Pemda {
 
     public void setUraianSingkat(String uraianSingkat) {
         this.uraianSingkat = uraianSingkat;
+    }
+
+    public Tprov getProvinsi() {
+        return provinsi;
+    }
+
+    public void setProvinsi(Tprov provinsi) {
+        this.provinsi = provinsi;
     }
 
 	
