@@ -2,6 +2,9 @@
 <dataset>
     <tprov 
         idtprov="99"
+        kdprov="DKI"
+        urprov="DKI Jakarta"
+        urprovsingkat="Jakarta"
     />
     
     <tpemda 
