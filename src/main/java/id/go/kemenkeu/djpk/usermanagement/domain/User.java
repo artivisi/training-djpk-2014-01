@@ -40,11 +40,11 @@ public class User {
 	 */
 
     @ManyToOne
-    @JoinColumn(name = "dibuat_oleh", nullable = false, foreignKey = @ForeignKey(name = "tpemda_ibfk_1"))
+    @JoinColumn(name = "dibuat_oleh", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_1"))
 	private User dibuatOleh;
     
     @ManyToOne
-    @JoinColumn(name = "diubah_oleh", nullable = false, foreignKey = @ForeignKey(name = "tpemda_ibfk_2"))
+    @JoinColumn(name = "diubah_oleh", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_2"))
 	private User diubahOleh;
 	
 	// relasi foreign key ke tprofil
@@ -54,7 +54,7 @@ public class User {
     
     // relasi foreign key ke twilkerja
     @ManyToOne
-    @JoinColumn(name = "id_twilkerja", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_3"))
+    @JoinColumn(name = "id_twilkerja", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_4"))
     private TwilayahKerja idWilayahKerja;
     
 	public String getPwd() {
