@@ -33,6 +33,11 @@ public class User {
 	@Column(name="isaktif")
 	private boolean isAktif;
 	
+	/*
+	 * Coba Tambahkan Foreign Key
+	 * 
+	 */
+	
 	public String getPwd() {
 		return pwd;
 	}
