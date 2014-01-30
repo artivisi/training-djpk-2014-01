@@ -4,7 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Table;
@@ -26,10 +29,8 @@ public class User {
 	@Column(name="tanggal_diubah")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date tanggalDiubah;
-	@Column(name="dibuat_oleh")
-	private Integer dibuatOleh;
-	@Column(name="diubah_oleh")
-	private Integer diubahOleh;
+	
+	
 	@Column(name="isaktif")
 	private boolean isAktif;
 	
@@ -37,7 +38,29 @@ public class User {
 	 * Coba Tambahkan Foreign Key
 	 * 
 	 */
+
+    @ManyToOne
+    @JoinColumn(name = "iduser", nullable = false, foreignKey = @ForeignKey(name = "tpemda_ibfk_1"))
+    @Column(name="dibuat_oleh")
+	private Integer dibuatOleh;
+    
+    @ManyToOne
+    @JoinColumn(name = "iduser", nullable = false, foreignKey = @ForeignKey(name = "tpemda_ibfk_2"))
+    @Column(name="diubah_oleh")
+	private Integer diubahOleh;
 	
+	// relasi foreign key ke tprofil
+    @ManyToOne
+    @JoinColumn(name = "id_tprofil", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_3"))
+    @Column(name="idt_tprofil")
+    private Integer idProfil;
+    
+    // relasi foreign key ke twilkerja
+    @ManyToOne
+    @JoinColumn(name = "id_twilkerja", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_3"))
+    @Column(name="idt_twilkerja")
+    private Integer idWilayahKerja;
+    
 	public String getPwd() {
 		return pwd;
 	}
