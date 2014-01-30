@@ -12,6 +12,11 @@ public class TprovController {
     @Autowired
     private UserManagementService userManagementService;
     
+    @RequestMapping("/referensi/tprov/edit")
+    public void edit(){
+        
+    }
+    
     @RequestMapping("/referensi/tprov/list")
     public ModelMap list(){
         ModelMap mm = new ModelMap();
