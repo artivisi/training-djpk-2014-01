@@ -49,12 +49,13 @@ public class User {
     @Column(name="diubah_oleh")
 	private Integer diubahOleh;
 	
-	 // relasi foreign key ke Tprofil
+	// relasi foreign key ke tprofil
     @ManyToOne
     @JoinColumn(name = "id_tprofil", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_3"))
     @Column(name="idt_tprofil")
     private Integer idProfil;
     
+    // relasi foreign key ke twilkerja
     @ManyToOne
     @JoinColumn(name = "id_twilkerja", nullable = false, foreignKey = @ForeignKey(name = "tuser_ibfk_3"))
     @Column(name="idt_twilkerja")
