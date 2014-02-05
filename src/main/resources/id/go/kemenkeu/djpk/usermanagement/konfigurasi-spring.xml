@@ -10,8 +10,8 @@
 
     <!-- ${variabel} dibaca dari file properties -->
     <context:property-placeholder location="
-        jdbc.properties,
-        jdbc.properties.private
+        classpath*:jdbc.properties,
+        classpath*:jdbc.properties.private
     " />
     <!-- kalau ${variabel} didefinisikan 
     di jdbc.properties dan juga jdbc.properties.private, 
