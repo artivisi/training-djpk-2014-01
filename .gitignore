@@ -21,3 +21,6 @@ nbproject
 build
 dist
 private
+
+# Ignore setting masing-masing programmer
+jdbc.properties.private
